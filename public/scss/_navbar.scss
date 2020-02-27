@@ -1,0 +1,132 @@
+/*Estilo NAVBAR1*/
+.navbar {
+justify-content: space-around;
+    .navbar-toggler{
+        background-color: #ef706c;
+            .navbar-toggler-icon{
+            color: wheat;
+            padding-top: 20%;
+                img{   
+                width: 65%;
+                }
+            }
+    }
+    .logo {
+        box-sizing: content-box;
+        width: 70px;
+            svg {
+                display: block;
+                width: 100%;
+            }
+    }
+    .user-nav{
+    width: 4vw;
+    }
+    .nav-middle{
+        flex-grow: 0;
+        ul {
+            display: flex;
+            font-size: 1rem;
+            list-style: none;
+            text-transform: capitalize;
+            margin: 0;
+            li{
+            margin: 0 5%;
+                a {
+                    color: inherit;
+                    text-decoration: none !important;
+                    line-height: 70px;
+                    padding: 0 30px;
+                    transition: background-color .3s ease-in-out;
+                    &:hover {
+                        color: white;
+                        background-color:$blue-card
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/*Estilo NAVBAR2*/
+.nav2{
+    display: flex;
+    background-color: $font-title;
+    color: $grey-color;
+    justify-content: center;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    .col-12 {
+        ul {
+            display: flex;
+            justify-content: space-around;
+            font-size: 1rem;
+            height: 70px;
+            list-style: none;
+            text-transform: capitalize;
+            margin: 0;
+            padding: 0;
+            a {
+                color: inherit;
+                text-decoration: none !important;
+                line-height: 70px;
+                text-transform: uppercase;
+                font-weight: 600;
+                transition: background-color .3s ease-in-out;
+
+                &:hover {
+                color: white;
+                background-color: $orange-card;
+                }
+            }
+        }
+    }
+}
+
+/*Estilo BOTON FLOTANTES*/
+
+.contenedor2{
+width:90px;
+height:240px;
+position:absolute;
+left:0px;
+bottom:0px;
+z-index: 99;
+    .botonF1{
+        width:60px;
+        height:60px;
+        border-radius:100%;
+        background:$font-title;
+        left:0;
+        bottom:0;
+        position:fixed;
+        margin-left:16px;
+        margin-bottom:16px;
+        border:none;
+        outline:none;
+        color:#FFF;
+        font-size:36px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        transition:.3s;  
+        &:hover span{
+        transform:rotate(360deg);
+
+        }
+        &:active{
+        transform:scale(1.1);
+        }
+        a{
+            text-decoration: none;
+            color: white !important;
+            &:hover{
+                text-decoration: none;
+            }
+            span{
+            transition:.5s;  
+            }
+        }
+
+
+    }
+}
+

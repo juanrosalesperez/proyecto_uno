@@ -1,0 +1,65 @@
+/*ESTILO FOOTER*/
+.footer-blue{
+    padding-top: 5%;
+    background-color: $font-title;
+    flex-direction: column !important;
+    .row-blue{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 4%;
+        .card-blue{
+            background-color: transparent;
+            border: none;
+            border-right: 1px solid #94949e61;        
+            h5{
+                color: $grey-color;
+                font: 400 14px;
+            }
+            p{
+                color: $white;
+                font: 300 22px;
+            }
+
+        }
+        .gradiente{
+            width: 100%;
+            height: 2px;
+            /* gradient can be an image */
+            background-image: linear-gradient(-90deg, #48D9D7, #48D9D7, #EB4859, #EB4859);
+        }
+    }
+    .row-blue-info{
+        display: flex;
+        justify-content: space-between;
+        padding: 4% 4%;
+        .text-footer{
+            text-align: center;
+            p{
+                color:rgba(255, 255, 255, 0.397);
+            }
+            .iconos-footer{
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            padding-left: 0;
+                svg{
+                fill: $blue;
+                margin: 0 15px;
+                }
+            }
+        }
+
+        .special{
+            color: $white;
+            justify-content: space-around;
+            display: flex;
+            a{
+            color:  $blue;;
+            text-decoration: none !important;
+            }
+        }
+    }
+
+}
+
+

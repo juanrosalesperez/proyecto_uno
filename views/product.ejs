@@ -1,0 +1,63 @@
+<% include partials/header %>
+<% include partials/navbar %>
+
+<!-- Formulario de relleno de producto -->
+<div class="body">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="container_form">
+                    <form action="/home/update/<%= results.id_product %>" method="post" enctype="multipart/form-data">
+                        <fieldset class="form-fieldset ui-input __first box-edit">
+                            <input type="text" name="id_user" value="<%= results.id_user %>" tabindex="0" />
+                        </fieldset>
+
+                        <fieldset class="form-fieldset ui-input __second">
+                            <input type="text" value="<%= results.name_product %>" name="name_product" tabindex="0" />
+                        </fieldset>
+
+                        <fieldset class="form-fieldset ui-input __third">
+                            <input type="text" value="<%= results.size %>" name="size" tabindex="0" />
+                        </fieldset>
+
+                        <fieldset class="form-fieldset ui-input __fourth">
+                            <input type="text" value="<%= results.type %>" name="type" tabindex="0" />
+                        </fieldset>
+
+                        <fieldset class="form-fieldset ui-input __fourth">
+                            <input type="text" value="<%= results.category %>" name="category" tabindex="0" />
+                        </fieldset>
+
+                        <fieldset class="form-fieldset ui-input __second">
+                            <input type="text" value="<%= results.description %>" name="description" tabindex="0" />
+                        </fieldset>
+
+                        <fieldset class="form-fieldset ui-input __third">
+                            <input type="text" value="<%= results.price %>" name="price" tabindex="0" />
+                        </fieldset>
+
+                        <fieldset class="form-fieldset ui-input __second">
+                            <input type="text" value="<%= results.stock %>" name="stock" tabindex="0" />
+
+                        </fieldset>
+
+                        <fieldset class=" ui-input __second">
+                            <div id="div_file">
+                                <p id="texto">Add file</p>
+                                <input class="btn btn-form" type="file" id="btn_enviar" value="<%= results.img %>"
+                                    name="myFile" tabindex="0">
+                            </div>
+                        </fieldset>
+
+                        <div class="form-footer">
+                            <input class="btn btn-form" type="submit" value="submit" class="boton" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include partials/footer %>
+<% include partials/botton %>

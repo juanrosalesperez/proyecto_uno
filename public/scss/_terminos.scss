@@ -1,0 +1,16 @@
+/*ESTILO TERMINOS Y CONDICIONES*/
+.jumbotron{
+    margin-bottom: none !important;
+    border-radius: 0 !important;
+    .lead{
+    margin-top: 20px;
+    font-size: 12px;
+    color: $orange-card;
+    font-weight: 100;
+    }
+    .my-4{
+        border-top: 1px solid rgba(249, 226, 186, 0.38);
+
+    }
+
+}

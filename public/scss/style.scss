@@ -1,0 +1,17 @@
+body{
+font-family: 'Overpass', sans-serif !important;
+box-sizing: unset !important;
+}
+
+@import './variables.scss';
+@import './mixin.scss';
+@import './navbar.scss';
+@import './footer.scss';
+@import './terminos.scss';
+@import './login.scss';
+@import './home.scss';
+@import './products.scss';   
+@import './info.scss'; 
+@import './family.scss'; 
+@import './catalogue.scss';  
+@import './query.scss';

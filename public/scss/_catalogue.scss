@@ -1,0 +1,96 @@
+//ESTILO CATALOGO
+.row {
+  width: 100%;
+  justify-content: flex-start;
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0;
+    .product {
+    width: 15em;
+    height: auto;
+    border-radius: 3px;
+    padding: 2em;
+    margin: 1em;
+    overflow: hidden;
+    position: relative;
+    flex: auto;
+    
+        &--orange {
+        @extend .product;
+        @include diagBgOrange;
+            &:hover {
+            box-shadow: 1px 5px 15px #CCC;
+            }
+        }
+        &--blue {
+        @extend .product;
+        @include diagBgBlue;
+            &:hover {
+            box-shadow: 1px 5px 15px #CCC;
+            }
+        }
+        &_inner {
+        display: flex;
+        align-items: center;
+        flex-flow: column wrap;
+        .title-blue {
+            font-weight: 900;
+            font-size: 1.5em;
+            -webkit-text-stroke: #ffffff 0.1px;
+            text-transform: uppercase;
+            color: $red-card; //ojo es el texto de la card blue por eso rojo
+
+        }
+        .title-orange {
+            font-weight: 900;
+            font-size: 1.5em;
+            text-transform: uppercase;
+            color: $blue-card; //ojo es el texto de la card rojo por eso azul
+
+        }
+        .subtitle {
+            font-weight: 400;
+            text-transform: uppercase;
+            color: $blue;
+        }
+        .price{
+        color: $primary;
+        font-size: 3em;
+        }
+        .info-btns {
+            display: flex;
+            .btn {
+                color: $white;
+                cursor: pointer;
+                font-size: 1rem;
+                font-weight: 900;
+                padding: 15px;
+                text-transform: uppercase;
+                transition: box-shadow .5s ease-in-out,
+                            transform .5s ease-in-out;
+                &:hover {
+                    box-shadow: 3px 10px 20px rgba(0,0,0,.3);
+                    color: $white;
+                    transform: translateY(-5px);
+                }
+            }
+            .discover-btn {
+                background-color: $blue-card;
+                color: $orange-card-sorft;
+                margin: 2%;
+            }
+            .cart-btn {
+                background-color: $red-card;
+                color: $blue-soft;
+                margin: 2%;
+            }
+        }   
+        }
+
+        img {
+        max-width: 100%;
+        height: auto !important;
+        text-align: center;
+        }
+    }
+}

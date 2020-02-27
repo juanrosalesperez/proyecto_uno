@@ -1,0 +1,42 @@
+<% include partials/header %>
+<% include partials/navbar %>
+
+<!-- Formulario de relleno de producto -->
+<div class="body">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="container_form">
+                    <form action="/users/update/<%= results.id_user %>" method="post" enctype="multipart/form-data">
+                        <fieldset class="form-fieldset ui-input __first box-edit">
+                            <input type="text" name="name" value="<%= results.name %>" tabindex="0" />
+                        </fieldset>
+
+                        <fieldset class="form-fieldset ui-input __third">
+                            <input type="text" value="<%= results.lastname %>" name="lastname" tabindex="0" />
+                        </fieldset>
+
+                        <fieldset class="form-fieldset ui-input __fourth">
+                            <input type="text" value="<%= results.email %>" name="email" tabindex="0" />
+                        </fieldset>
+
+                        <fieldset class="form-fieldset ui-input __fourth">
+                            <input type="text" value="<%= results.password %>" name="password" tabindex="0" />
+                        </fieldset>
+
+                        <fieldset class="form-fieldset ui-input __second">
+                            <input type="text" value="<%= results.is_admin %>" name="is_admin" tabindex="0" />
+                        </fieldset>
+
+                        <div class="form-footer">
+                            <input class="btn btn-form" type="submit" value="submit" class="boton" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include partials/footer %>
+<% include partials/botton %>

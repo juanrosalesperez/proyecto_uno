@@ -1,0 +1,48 @@
+<% include partials/header %>
+<% include partials/navbar %>
+<div class="contenedor2">
+    <a href="/home/form"> <button class="botonF1">
+            <span>+</span>
+        </button></a>
+</div>
+<div class="row">
+    <% if(data.length > 0) {let cont = 0; data.forEach (data => { %>
+    <% if(cont % 2 == 0){ %>
+    <div class='product--orange'>
+        <div class='product_inner'>
+            <img src="/uploads/<%= data.img %>" width='300'>
+            <p class="title-orange"><%= data.name_product %></p>
+            <p class="subtitle"><%= data.category %></p>
+            <p class="price"><%= data.price %>€</p>
+            <div class="info-btns">
+                <a class="btn discover-btn" href="/home/delete/<%= data.id_product %>">Eliminar</a>
+                <a class="btn cart-btn" href="/home/edit/<%= data.id_product %>">Editar</a>
+            </div>
+        </div>
+    </div>
+    <% }else if(cont % 2 != 0){ %>
+    <div class='product--blue'>
+        <div class='product_inner'>
+            <img src="/uploads/<%= data.img %>" width='300'>
+            <p class="title-blue"><%= data.name_product %></p>
+            <p class="subtitle"><%= data.category %></p>
+            <p class="price"><%= data.price %>€</p>
+            <div class="info-btns">
+                <a class="btn discover-btn" href="/home/delete/<%= data.id_product %>">Eliminar</a>
+                <a class="btn cart-btn" href="/home/edit/<%= data.id_product %>">Editar</a>
+            </div>
+        </div>
+    </div>
+    <% }  cont++ %>
+    <% });} else { %>
+    <main>
+        <div class="product-info">
+            <h1>NO TENGO CATALOGO PARA</h1>
+            <p><%= data.category %></p>
+        </div>
+    </main>
+    <% } %>
+</div>
+
+<% include partials/footer %>
+<% include partials/botton %>

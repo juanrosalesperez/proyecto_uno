@@ -1,0 +1,99 @@
+<% include partials/header %>
+<% include partials/navbar %>
+<div class="body">
+    <!-- formulario de employees -->
+    <div class="container_form">
+        <form class="form" action="/home/form" method="post" class="formulario" enctype="multipart/form-data">
+
+            <fieldset class="ui-input __first">
+                <input type="text" name="name" tabindex="0" />
+                <label for="name">
+                    <span data-text="Nombre">Nombre</span>
+                </label>
+            </fieldset>
+
+            <fieldset class="ui-input __second">
+                <input type="text" name="lastname" tabindex="0" />
+                <label for="lastname">
+                    <span data-text="Apellido">Apellido</span>
+                </label>
+            </fieldset>
+
+            <fieldset class="ui-input __second">
+                <input type="text" name="email" tabindex="0" />
+                <label for="email">
+                    <span data-text="Email">Email</span>
+                </label>
+            </fieldset>
+
+            <fieldset class="ui-input __third">
+                <input type="text" name="password" tabindex="0" />
+                <label for="password">
+                    <span data-text="Password">Password</span>
+                </label>
+            </fieldset>
+
+            <fieldset class="ui-input __second">
+                <input type="text" name="is_admin" tabindex="0" />
+                <label for="is_admin">
+                    <span data-text="Is_admin">Is_admin</span>
+                </label>
+            </fieldset>
+
+            <div class="form-footer">
+                <input class="btn btn-form" type="submit" value="submit" class="boton" />
+            </div>
+        </form>
+    </div>
+
+    <!-- listado de employees -->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <table class="container-datos">
+                    <thead>
+                        <tr>
+                            <th>
+                                <h1>Name</h1>
+                            </th>
+                            <th>
+                                <h1>Lastname</h1>
+                            </th>
+                            <th>
+                                <h1>Email</h1>
+                            </th>
+                            <th>
+                                <h1>Password</h1>
+                            </th>
+                            <th>
+                                <h1>Id_usiario</h1>
+                            </th>
+                            <th>
+                                <h1>Opcion Eliminar</h1>
+                            </th>
+                            <th>
+                                <h1>Opcion Editar</h1>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% data.forEach (data => {%>
+                        <tr>
+                            <td><%= data.name %></td>
+                            <td><%= data.lastname %></td>
+                            <td><%= data.email %></td>
+                            <td><%= data.password%></td>
+                            <td><%= data.is_admin%></td>
+                            <td><a href="/users/delete/<%= data.id_user %>">Eliminar</a></td>
+                            <td><a href="/users/edit/<%= data.id_user %>">Editar</a></td>
+                        </tr>
+                        <%});%>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<% include partials/footer %>
+<% include partials/botton %>

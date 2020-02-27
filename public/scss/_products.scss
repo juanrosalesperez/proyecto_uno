@@ -1,0 +1,319 @@
+/*ESTILO PRODCUT - PRODUCTS*/
+//Esta en la pagina productos
+.container_form {
+    max-width: 50vw;
+    margin: 0 auto;
+    padding: 20px 16px 40px 16px;
+    transform: translateZ(0);
+    text-align: center;
+    .form-footer {
+    margin-top: 2em;
+            .btn-form{
+            width: 40%;
+            }
+
+            .btn {
+            border: 0;
+            background-color: #50617A;
+            padding: 18px 30px;
+            font-size: 14px;
+            line-height: 1.5;
+            text-transform: uppercase;
+            letter-spacing: .0875em;
+            font-weight: 500;
+            color: #ffffff;
+            border-radius: 100px;
+            outline: 0;
+            transition: background-color $time $bezier,
+            color $time $bezier;
+
+            &:focus,&:active,
+            &:hover {
+            background-color: #6EB1FF;
+            color: white;
+            }
+            }
+    }
+    select{
+        width: 100%;
+        border-radius: 10px;
+        text-decoration: none;
+        border: none;
+        margin-bottom: 2%;
+    }
+    .ui-input {
+    position: relative;
+    padding: 0;
+    border: 0;
+        input {
+        border: 0;
+        background: none;
+        padding: 16px 0 16px 0;
+        font-size: 24px;
+        outline: 0;
+        width: 100%;
+        color:$white;
+            &:focus,
+            &.error,
+            &:invalid,
+            &.filled {
+                & + label {
+                    &::after {
+                    transform: scaleX(1);
+                    transform-origin: left;
+                    }
+                    span::after {
+                    background-image: linear-gradient(to right,
+                    rgba(255,255,255,1) 50%,
+                    rgba(255,255,255,0) 0%);
+                    background-position: 0% 50%;
+                    }
+                }
+            }
+
+            &.filled {
+            color: black;
+                & + label {
+                    &::after {
+                    background-color: #ffffff;
+                    }
+                    span::after {
+                    background-image: linear-gradient(to right,
+                    #ffffff 50%,
+                    rgba(255,255,255,0) 0%);
+                    background-position: 0% 50%;
+                    }
+                }
+            }
+
+            &:focus {
+            color: #6EB1FF;
+                & + label {
+                    &::after {
+                    background-color: #6EB1FF;
+                    }
+                    span::after {
+                    background-image: linear-gradient(to right,
+                    #6EB1FF 50%,
+                    rgba(255,255,255,0) 0%);
+                    background-position: 0% 50%;
+                    }
+                }
+            }
+
+            &.error,
+            &:invalid {
+            color: #E66161;
+                & + label {
+                    &::after {
+                    background-color: #E66161;
+                    }
+                    span::after {
+                    background-image: linear-gradient(to right,
+                    #E66161 50%,
+                    rgba(255,255,255,0) 0%);
+                    background-position: 0% 50%;
+                    }
+                }
+            }
+        }
+        input + label {
+        position: relative;
+        display: block;
+        padding: 8px 0 8px 0;
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: .0875em;
+        font-weight: 500;
+        text-align: left;
+        
+        &::before, &::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: "";
+            width: 100%;
+            height: 1px;
+        }
+        
+        &::before {
+            background-color: rgba(255, 255, 255, .2);
+        }
+        
+        &::after {
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform $time $bezier;
+            background-color: #6EB1FF;
+            height: 2px;
+        }
+        
+        span {
+            position: relative;
+            color: rgba(255, 255, 255, .2);
+            transition: color $time $bezier;
+        
+            &::after {
+            content: attr(data-text);
+            position: absolute;
+            overflow: hidden;
+            left: 0;
+            transform: scaleX(1);
+            white-space: nowrap;
+            color: $accent;
+            
+            background-image: linear-gradient(to right,
+                #4A90E2 50%,
+                rgba(255,255,255,0) 0%);
+            background-position: 100% 50%;
+            background-size: 200%;
+
+            
+            backface-visibility: hidden;
+            perspective: 1000;
+            transform: translateZ(0);
+            
+            transition: background-position $time $bezier;
+            }
+        }
+        }
+    }
+    .__first, .__second, .__third, .__fourth {
+    animation-name: fadeIn;
+    animation-duration: 180ms;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+    }
+
+    .__first { animation-delay: 0; }
+    .__second { animation-delay: 80ms; }
+    .__third { animation-delay: 180ms; }
+    .__fourth { animation-delay: 360ms; }
+
+}
+//Esta en la pagina de producto
+.form-fieldset{
+    border: 2px solid #ff8989 !important;
+    border-radius: 35px;
+    padding: 0 0 0 5% !important;
+    margin: 5px;
+}
+
+p#texto{
+	text-align: center;
+	color:white;
+}
+
+div#div_file{
+    position: relative;
+    padding: 10px;
+    width: 50%;
+    margin-left: 5%;
+    background-color: #50617a;
+    -webkit-border-radius: 5px;
+    -webkit-box-shadow: 0px 3px 0px #3a5a8a;
+}
+
+input#btn_enviar{
+	position:absolute;
+	top:0px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	width:100%;
+	height:100%;
+	opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -25%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+
+
+
+//Stilo tabla producto
+.body {
+  font-weight: 300;
+  line-height: 1.42em;
+  color:#185875;
+  background-color: #3b3b58;
+    .container-datos {
+        text-align: center;
+        width: 95%;
+        margin: 0 auto;
+        display: table;
+        padding: 0 0 8em 0;
+            tr{
+                &:nth-child(odd) {
+                background-color: #f9baba;
+                }
+                &:nth-child(even) {
+                background-color: #f38e8e;
+                }
+                td{
+                padding: 6px;
+                font-weight: normal;
+                font-size: 1em;
+                -webkit-box-shadow: 0 2px 2px -2px $accent;
+                -moz-box-shadow: 0 2px 2px -2px $accent;
+                box-shadow: 0 2px 2px -2px $accent; 
+                    &:first-child { color: rgb(196, 42, 62); }
+                    &:hover {
+                    background-color: $blue-card;
+                    color: $font-title;
+                    font-weight: bold;
+
+                    box-shadow: $font-title -1px 1px, $font-title -2px 2px, $font-title -3px 3px, $font-title -4px 4px, $font-title -5px 5px, $font-title -6px 6px;
+                    transform: translate3d(6px, -6px, 0);
+
+                    transition-delay: 0s;
+                    transition-duration: 0.4s;
+                    transition-property: all;
+                    transition-timing-function: line;
+                    }
+                    a{
+                    height: 100%;
+                    text-decoration: none;
+                    color: #185875;
+                    }
+                }
+                th{
+                background-color: $orange-card;
+                padding: 10px;
+                    &:hover {
+                    background-color: $blue-card;
+                    color: $font-title;
+                    font-weight: bold;
+
+                    box-shadow: $font-title -1px 1px, $font-title -2px 2px, $font-title -3px 3px, $font-title -4px 4px, $font-title -5px 5px, $font-title -6px 6px;
+                    transform: translate3d(6px, -6px, 0);
+
+                    transition-delay: 0s;
+                    transition-duration: 0.4s;
+                    transition-property: all;
+                    transition-timing-function: line;
+                    } 
+
+                    h1 {
+                    font-weight: bold;
+                    font-size: 1em;
+                    text-align: left;
+                    color: #185875;
+                    }  
+                }
+
+            }
+    }
+}
+
+
+
+

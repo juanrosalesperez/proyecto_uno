@@ -1,0 +1,142 @@
+<% include partials/header %>
+<% include partials/navbar %>
+<div class="body">
+    <!-- Formulario de relleno de producto -->
+    <div class="container_form">
+        <form class="form" action="/home/form" method="post" class="formulario" enctype="multipart/form-data">
+
+            <fieldset class="ui-input __first">
+                <input type="text" name="id_user" tabindex="0" />
+                <label for="id_user">
+                    <span data-text="ID_User">ID_User</span>
+                </label>
+            </fieldset>
+
+            <fieldset class="ui-input __second">
+                <input type="text" name="name_product" tabindex="0" />
+                <label for="name_product">
+                    <span data-text="Nombre del Producto">Nombre del Producto</span>
+                </label>
+            </fieldset>
+
+            <fieldset class="ui-input __third">
+                <select name="size">
+                    <option value="s">S</option>
+                    <option value="m">M</option>
+                    <option value="l">L</option>
+                    <option value="xl">XL</option>
+                    <option value="xxl">XXL</option>
+                </select>
+            </fieldset>
+
+            <fieldset class="ui-input __fourth">
+                <select name="type">
+                    <option value="male">Hombre</option>
+                    <option value="female">Mujer</option>
+                    <option value="unisex">Unisex</option>
+                </select>
+            </fieldset>
+
+            <fieldset class="ui-input __fourth">
+                <select name="category">
+                    <option value="shirt">Camiseta</option>
+                    <option value="sweatshirt">Sudadera</option>
+                    <option value="cap">Gorra</option>
+                </select>
+            </fieldset>
+
+            <fieldset class="ui-input __second">
+                <input type="text" name="description" tabindex="0" />
+                <label for="description">
+                    <span data-text="Descripción">Descripción</span>
+                </label>
+            </fieldset>
+
+            <fieldset class="ui-input __third">
+                <input type="text" name="price" tabindex="0" />
+                <label for="price">
+                    <span data-text="Precio">Precio</span>
+                </label>
+            </fieldset>
+
+            <fieldset class="ui-input __second">
+                <input type="text" name="stock" tabindex="0" />
+                <label for="stock">
+                    <span data-text="Stock">Stock</span>
+                </label>
+            </fieldset>
+
+            <fieldset class="ui-input __second">
+                <div id="div_file">
+                    <p id="texto">Add file</p>
+                    <input class="btn btn-form" type="file" id="btn_enviar" name="myFile" tabindex="0">
+                </div>
+            </fieldset>
+
+            <div class="form-footer">
+                <input class="btn btn-form" type="submit" value="submit" class="boton" />
+            </div>
+        </form>
+    </div>
+    <!-- Tabla de relleno de datos -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <table class="container-datos">
+                    <thead>
+                        <tr>
+                            <th>
+                                <h1>ID_Usuario</h1>
+                            </th>
+                            <th>
+                                <h1>Nombre del producto</h1>
+                            </th>
+                            <th>
+                                <h1>Talla</h1>
+                            </th>
+                            <th>
+                                <h1>Tipo</h1>
+                            </th>
+                            <th>
+                                <h1>Categoría</h1>
+                            </th>
+                            <th>
+                                <h1>Descripción</h1>
+                            </th>
+                            <th>
+                                <h1>Precio</h1>
+                            </th>
+                            <th>
+                                <h1>Stock</h1>
+                            </th>
+                            <th>
+                                <h1>Eliminar</h1>
+                            </th>
+                            <th>
+                                <h1>Editar</h1>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% data.forEach (data => {%>
+                        <tr>
+                            <td><%= data.id_user %></td>
+                            <td><%= data.name_product %></td>
+                            <td><%= data.size %></td>
+                            <td><%= data.type %></td>
+                            <td><%= data.category %></td>
+                            <td><%= data.description %></td>
+                            <td><%= data.price %> €</td>
+                            <td><%= data.stock %> Und</td>
+                            <td><a href="/home/delete/<%= data.id_product %>">Eliminar</a></td>
+                            <td><a href="/home/edit/<%= data.id_product %>">Editar</a></td>
+                        </tr>
+                        <%});%>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<% include partials/footer %>
+<% include partials/botton %>

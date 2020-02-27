@@ -1,0 +1,73 @@
+<% include partials/header %>
+<% include partials/navbar %>
+<div class="contenedor2">
+    <a href="/home/form"> <button class="botonF1">
+            <span>+</span>
+        </button></a>
+</div>
+
+
+<% if(data.length > 0) {let cont = 0; data.forEach (data => { %>
+
+<% if(cont % 2 == 0){ %>
+<main>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <section class="left">
+                    <div class="product-info">
+                        <h1><%= data.name_product %></h1>
+                        <p><%= data.category %></p>
+                        <h2><%= data.price %>€</h2>
+                        <div class="info-btns">
+                            <a class="btn discover-btn" href="/home/catalogue/<%= data.id_product %>">Cómprame</a>
+                            <a class="btn cart-btn" href="/home/edit/<%= data.id_product %>">Editar</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-sm-6">
+                <section class="right">
+                    <img src="/uploads/<%= data.img %>" alt="">
+                </section>
+            </div>
+        </div>
+    </div>
+</main>
+<% }else if(cont % 2 != 0){ %>
+<main>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <section class="right">
+                    <img src="/uploads/<%= data.img %>" alt="">
+                </section>
+            </div>
+            <div class="col-sm-6">
+                <section class="left">
+                    <div class="product-info">
+                        <h1><%= data.name_product %></h1>
+                        <p><%= data.category %></p>
+                        <h2><%= data.price %>€</h2>
+                        <div class="info-btns">
+                            <a class="btn discover-btn" href="/home/catalogue/<%= data.id_product %>">Cómprame</a>
+                            <a class="btn cart-btn" href="/home/edit/<%= data.id_product %>">Editar</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</main>
+<% }  cont++ %>
+<% });} else { %>
+<main>
+    <div class="product-info">
+        <h1>NO TENGO CATALOGO PARA LO QUE PIDES</h1>
+    </div>
+    </div>
+</main>
+<% }%>
+
+<% include partials/footer %>
+<% include partials/botton %>

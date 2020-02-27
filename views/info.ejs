@@ -1,0 +1,51 @@
+<% include partials/header %>
+<% include partials/navbar %>
+<div class="product-card">
+    <div class="kb-card">
+        <div class="container-fluid">
+            <div class="row kb-card__body kb-row">
+                <div class="col-sm-6">
+                    <div class="kb-col kb-col--50 product-card__left">
+                        <h3 class="product-card__name">
+                            <%= data.name_product %>
+                        </h3>
+                        <p class="product-card__subname">
+                            <%= data.category %>
+                        </p>
+                        <p class="product-card__price kb-color-text--black"><%= data.price %>€</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="kb-col kb-col--50 product-card__right">
+                        <div class="product-card__image">
+                            <img src="/uploads/<%= data.img %>" alt="">
+                        </div>
+                        <p class="product-card__description">
+                            <%= data.description %>
+                        </p>
+                        <div class="product-card__availability">
+                            <p class="product-card__text">
+                                Stock - <%= data.stock %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-12">
+                <div class="row kb-card__footer kb-row">
+
+                    <div class="kb-col kb-col--50 kb-right kb-add-to-cart">
+                        <a class="kb-button--link kb-color-text--primary">
+                            Cómprame
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include partials/footer %>
+<% include partials/botton %>
